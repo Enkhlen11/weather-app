@@ -1,11 +1,11 @@
 import Moon from "../components/Moon";
-export default function RightCard() {
+export default function RightCard({ city }) {
   return (
     <div className="z-10  relative w-[414px] h-[828px] bg-[#1F2937]/80 rounded-[50px] m-auto my-[14vh]">
       <div className="pl-10 pt-[56px]">
         <p className="text-[18px] text-[#9CA3AF]">January 7, 2025</p>
         <div>
-          <h1 className="text-[48px]  text-[#FFFFFF]">Ulaanbaatar </h1>
+          <h1 className="text-[48px]  text-[#FFFFFF]">{city} </h1>
           <img className="my-[-7vh] pl-[24vh]" src="./location.svg" alt="" />
         </div>
         <img

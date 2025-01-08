@@ -1,8 +1,8 @@
 import RightCard from "../components/RightCard";
-export default function () {
+export default function ({ city }) {
   return (
     <div className="h-[100vh] w-[50vw] bg-[#0F141E] m-auto">
-      <RightCard city={cityName} />
+      <RightCard city={city} />
     </div>
   );
 }
