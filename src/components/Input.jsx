@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import LeftCard from "./LeftCard";
 
-export default function Input() {
+export default function Input({ city, setCityName }) {
   const [cities, setCities] = useState([]);
   const [searched, setSearched] = useState([]);
-  const [cityName, setCityName] = useState([]);
 
   async function getData() {
     const result = await fetch("https://countriesnow.space/api/v0.1/countries");
@@ -64,7 +63,6 @@ export default function Input() {
             <p>{city}</p>
           </div>
         ))}
-      <LeftCard city={cityName} />
     </div>
   );
 }
