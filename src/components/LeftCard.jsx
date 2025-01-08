@@ -1,14 +1,25 @@
-export default function LeftCard() {
+import Sun from "../components/Sun";
+export default function LeftCard({ city }) {
+  async function getRender() {
+    const result = await fetch(
+      `https://api.weatherapi.com/v1/forecast.json?key=af4294c0d5c0459c84a21151250801&q=${city}`
+    );
+    console.log(result);
+  }
+
   return (
-    <div className="relative w-[414px] h-[828px] bg-[#F9FAFB]/80 m-auto rounded-[50px]">
+    <div className="relative w-[414px] h-[828px] bg-[#F9FAFB]/80 m-auto my-[14vh] rounded-[50px] ">
+      <Sun />
       <div className="pl-10 pt-[56px]">
-        <p className="text-[18px] text-[#6B7280]">January 7, 2025</p>
-        <h1 className="text-[48px] text-[#111827]">Ulaanbaatar</h1>
-        <div className="my-[-11vh] ">
-          <img className="pl-[47vh] " src="./location.svg" alt="" />
+        <p className="text-[18px] text-[#6B7280]">localtime</p>
+        <div>
+          <h1 className="text-[48px] text-[#111827]">{city}</h1>
+          <img className="my-[-70px] pl-[24vh]" src="./location.svg" alt="" />
         </div>
+        <div className="my-[-11vh] "></div>
         <img
-          className="mx-[7vh] pt-[27vh] pb-[20vh] "
+          clas
+          className=" mx-[3vh] pt-[20vh] pb-[20vh] "
           src="./faceSun.png"
           alt=""
         />
