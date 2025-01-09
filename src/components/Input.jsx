@@ -1,9 +1,14 @@
 import { useEffect, useState } from "react";
 import LeftCard from "./LeftCard";
 
-export default function Input({ city, setCityName }) {
+export default function Input({
+  city,
+  setCityName,
+  getCityName,
+  searched,
+  setSearched,
+}) {
   const [cities, setCities] = useState([]);
-  const [searched, setSearched] = useState([]);
 
   async function getData() {
     const result = await fetch("https://countriesnow.space/api/v0.1/countries");
@@ -13,6 +18,7 @@ export default function Input({ city, setCityName }) {
     });
     incomeCities = incomeCities.flat();
     setCities(incomeCities);
+
     // cities: (8)[
     //   ("Herat",
     //   "Kabul",
@@ -38,10 +44,10 @@ export default function Input({ city, setCityName }) {
     });
     setSearched(filtered);
   };
-  function getcityName(city) {
-    setCityName(city);
-    setSearched([]);
-  }
+  // function getcityName(city) {
+  //   setCityName(city);
+  //   setSearched([]);
+  // }
   return (
     <div className="z-10 absolute w-[567px] px-6 py-4 text-3xl bg-white  gap-2	rounded-[48px] mx-10 me-[193px] my-10 text-[black]">
       <div className=" flex items-center">
@@ -54,10 +60,11 @@ export default function Input({ city, setCityName }) {
         />
       </div>
       {searched.length > 0 &&
-        searched.slice(0, 4).map((city) => (
+        searched.slice(0, 4).map((city, index) => (
           <div
+            key={index}
             className="flex gap-2 h-[56px] py-[16px] text-[28px] hover:bg-[#f8f8f8] cursor-pointer"
-            onClick={() => getcityName(city)}
+            onClick={() => getCityName(city)}
           >
             <img src="location.svg" alt="" />
             <p>{city}</p>

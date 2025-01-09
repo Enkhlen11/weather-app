@@ -1,9 +1,11 @@
 import Moon from "../components/Moon";
-export default function RightCard({ city }) {
+export default function RightCard({ city, year, month, day, setTemp }) {
   return (
     <div className="z-10  relative w-[414px] h-[828px] bg-[#1F2937]/80 rounded-[50px] m-auto my-[14vh]">
       <div className="pl-10 pt-[56px]">
-        <p className="text-[18px] text-[#9CA3AF]">January 7, 2025</p>
+        <p className="text-[18px] text-[#9CA3AF]">
+          {day} {month} {year}
+        </p>
         <div>
           <h1 className="text-[48px]  text-[#FFFFFF]">{city} </h1>
           <img className="my-[-7vh] pl-[24vh]" src="./location.svg" alt="" />
@@ -13,6 +15,9 @@ export default function RightCard({ city }) {
           src="./faceMoon.png"
           alt=""
         />
+        <p className="text-[144px] bg-gradient-to-r from-[#111827] to-[#6B7280]">
+          {setTemp?.mintemp_c}
+        </p>
       </div>
       <div className="flex justify-around w-[318px] m-auto  ">
         <img src="/home.svg" alt="" />
