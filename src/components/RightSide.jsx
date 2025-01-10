@@ -1,14 +1,18 @@
 import RightCard from "../components/RightCard";
-export default function ({ city, year, day, month, setTemp }) {
+import Moon from "../components/Moon";
+export default function ({ city, setTemp, setText, setDate, setNigth }) {
   return (
     <div className="h-[100vh] w-[50vw] bg-[#0F141E] m-auto">
       <RightCard
         city={city}
-        year={year}
-        month={month}
-        day={day}
         setTemp={setTemp}
+        setText={setText}
+        setDate={setDate}
+        setNigth={setNigth}
       />
+      <div>
+        <Moon />
+      </div>
     </div>
   );
 }

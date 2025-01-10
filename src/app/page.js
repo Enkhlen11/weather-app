@@ -10,6 +10,8 @@ export default function Home() {
 
   const [temp, setTemp] = useState();
   const [text, setText] = useState();
+  const [date, setDate] = useState();
+  const [nigthText, setNigthText] = useState();
 
   async function getRender(city) {
     console.log("getting weather data");
@@ -17,15 +19,12 @@ export default function Home() {
       `https://api.weatherapi.com/v1/forecast.json?key=af4294c0d5c0459c84a21151250801&q=${city}`
     );
     const data = await result.json();
-    // console.log(data.forecast.forecastday[0].day);
+    console.log(data.forecast.forecastday[0].hour[21].condition.text);
     setTemp(data.forecast.forecastday[0].day);
     setText(data.forecast.forecastday[0].day.condition.text);
+    setDate(data.forecast.forecastday[0].date);
+    setNigthText(data.forecast.forecastday[0].hour[21].condition.text);
   }
-
-  const dateNow = new Date();
-  const year = dateNow.getFullYear();
-  const month = dateNow.getUTCMonth() + 1;
-  const day = dateNow.getDate();
 
   function getCityName(city) {
     setCityName(city);
@@ -33,7 +32,6 @@ export default function Home() {
     getRender(city);
   }
 
-  console.log(year, month, day);
   return (
     <div className="flex relative items-center">
       <Circle />
@@ -41,21 +39,20 @@ export default function Home() {
         searched={searched}
         setCityName={setCityName}
         city={cityName}
-        year={year}
-        month={month}
-        day={day}
+        getRender={getRender}
         getCityName={getCityName}
         setSearched={setSearched}
         setTemp={temp}
         setText={text}
+        setDate={date}
       />
       <RightSide
         setCityName={setCityName}
         city={cityName}
-        year={year}
-        month={month}
-        day={day}
         setTemp={temp}
+        setText={text}
+        setDate={date}
+        setNigth={nigthText}
       />
     </div>
   );
