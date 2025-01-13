@@ -1,4 +1,4 @@
-export default function LeftCard({ city, setTemp, setText, setDate }) {
+export default function LeftCard({ city, setTemp, setText, setDate, dayIcon }) {
   return (
     <div className="z-10 relative w-[414px] h-[828px] bg-[#F9FAFB]/80 m-auto my-[14vh] rounded-[50px] text-[black] ">
       <div className="pl-10 pt-[56px]">
@@ -9,8 +9,8 @@ export default function LeftCard({ city, setTemp, setText, setDate }) {
         </div>
         <div className="my-[-11vh] "></div>
         <img clas className=" mx-[3vh] pt-[20vh] " src="./faceSun.png" alt="" />
-        <p className="text-[144px] bg-clip-text text-transparent bg-gradient-to-r from-[#111827] to-[#6B7280]">
-          {setTemp?.maxtemp_c}°
+        <p className="text-[144px] bg-clip-text text-transparent bg-gradient-to-r from-[#111827] to-[#7d8391]">
+          {setTemp}°
         </p>
         <p className="text-[#FF8E27] text-[24px] font-extrabold mt-[-20px]">
           {setText}

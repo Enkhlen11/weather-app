@@ -1,6 +1,6 @@
 export default function RightCard({
   city,
-  setTemp,
+  setNightTemp,
   setText,
   setDate,
   setNigth,
@@ -14,8 +14,8 @@ export default function RightCard({
           <img className="my-[-7vh] pl-[27vh]" src="./location.svg" alt="" />
         </div>
         <img className="mx-[3vh] pt-[17vh] " src="./faceMoon.png" alt="" />
-        <p className="text-[144px] bg-clip-text bg-gradient-to-b from-[#111827] to-[#6B7280]">
-          {setTemp?.mintemp_c}°
+        <p className="text-[144px] bg-clip-text text-transparent bg-gradient-to-r from-[#F9FAFB] to-[#1e1f21]">
+          {setNightTemp}°
         </p>
         <p className="text-[#777CCE] text-[24px] font-extrabold mt-[-20px]">
           {setNigth}
