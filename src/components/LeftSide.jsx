@@ -11,7 +11,7 @@ export default function LeftSide({
   setTemp,
   setText,
   setDate,
-  dayIcon,
+  dayCondition,
 }) {
   return (
     <div className="h-[100vh] w-[50vw] bg-[#F3F4F6] justify-center">
@@ -28,7 +28,7 @@ export default function LeftSide({
         setTemp={setTemp}
         setText={setText}
         setDate={setDate}
-        dayIcon={dayIcon}
+        dayCondition={dayCondition}
       />
     </div>
   );

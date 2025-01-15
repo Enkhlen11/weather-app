@@ -12,7 +12,8 @@ export default function Home() {
   const [date, setDate] = useState();
   const [nigthText, setNigthText] = useState();
   const [nightTemp, setNightTemp] = useState();
-  const [dayIcon, setDayIcon] = useState();
+  const [dayCondition, setDayCondition] = useState();
+  const [nightCondition, setNightCondition] = useState();
 
   async function getRender(city) {
     console.log("getting weather data");
@@ -26,7 +27,8 @@ export default function Home() {
     setText(data.forecast.forecastday[0].day.condition.text);
     setDate(data.forecast.forecastday[0].date);
     setNigthText(data.forecast.forecastday[0].hour[0].condition.text);
-    setDayIcon(data.current.condition.text);
+    setDayCondition(data.current.condition.text);
+    setNightCondition(data.forecast.forecastday[0].hour[0].condition.text);
   }
 
   function getCityName(city) {
@@ -48,7 +50,7 @@ export default function Home() {
         setTemp={temp}
         setText={text}
         setDate={date}
-        dayIcon={dayIcon}
+        dayCondition={dayCondition}
       />
       <RightSide
         setCityName={setCityName}
@@ -57,6 +59,7 @@ export default function Home() {
         setText={text}
         setDate={date}
         setNigth={nigthText}
+        nightCondition={nightCondition}
       />
     </div>
   );
