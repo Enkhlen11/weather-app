@@ -1,9 +1,9 @@
 export default function RightCard({
   city,
   setNightTemp,
-  setText,
+
   setDate,
-  setNigth,
+
   nightCondition,
 }) {
   function changeWeatherIcon(nightCondition) {
@@ -50,7 +50,7 @@ export default function RightCard({
           {setNightTemp}°
         </p>
         <p className="text-[#777CCE] text-[24px] font-extrabold mt-[-20px]">
-          {setNigth}
+          {nightCondition}
         </p>
       </div>
       <div className="flex justify-around w-[318px] m-auto mt-[20px] ">

@@ -10,7 +10,7 @@ export default function Home() {
   const [temp, setTemp] = useState();
   const [text, setText] = useState();
   const [date, setDate] = useState();
-  const [nigthText, setNigthText] = useState();
+
   const [nightTemp, setNightTemp] = useState();
   const [dayCondition, setDayCondition] = useState();
   const [nightCondition, setNightCondition] = useState();
@@ -26,7 +26,7 @@ export default function Home() {
     setNightTemp(data.forecast.forecastday[0].hour[0].temp_c);
     setText(data.forecast.forecastday[0].day.condition.text);
     setDate(data.forecast.forecastday[0].date);
-    setNigthText(data.forecast.forecastday[0].hour[0].condition.text);
+
     setDayCondition(data.current.condition.text);
     setNightCondition(data.forecast.forecastday[0].hour[0].condition.text);
   }
@@ -56,9 +56,7 @@ export default function Home() {
         setCityName={setCityName}
         city={cityName}
         setNightTemp={nightTemp}
-        setText={text}
         setDate={date}
-        setNigth={nigthText}
         nightCondition={nightCondition}
       />
     </div>

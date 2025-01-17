@@ -30,7 +30,7 @@ export default function Input({
     const search = e.target.value;
     setInputValue(search);
     const filtered = cities.filter((city) => {
-      return city.includes(search);
+      return city.toLowerCase().includes(search.toLowerCase());
     });
     setSearched(filtered);
   };

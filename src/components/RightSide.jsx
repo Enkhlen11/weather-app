@@ -3,9 +3,9 @@ import Moon from "../components/Moon";
 export default function ({
   city,
   setNightTemp,
-  setText,
+
   setDate,
-  setNigth,
+
   nightCondition,
 }) {
   return (
@@ -13,9 +13,7 @@ export default function ({
       <RightCard
         city={city}
         setNightTemp={setNightTemp}
-        setText={setText}
         setDate={setDate}
-        setNigth={setNigth}
         nightCondition={nightCondition}
       />
       <div>

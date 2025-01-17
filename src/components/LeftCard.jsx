@@ -46,7 +46,7 @@ export default function LeftCard({
           {setTemp}°
         </p>
         <p className="text-[#FF8E27] text-[24px] font-extrabold mt-[-20px]">
-          {setText}
+          {dayCondition}
         </p>
       </div>
       <div className="flex justify-around w-[318px] m-auto mt-[20px] ">
