@@ -7,36 +7,45 @@ export default function RightCard({
   nightCondition,
 }) {
   function changeWeatherIcon(nightCondition) {
-    const condition = nightCondition.toLowerCase();
+    const condition = nightCondition?.toLowerCase();
 
     switch (true) {
-      case condition.includes("clear"):
+      case condition?.includes("clear"):
         return "faceMoon.png";
-      case condition.includes("rain"):
+      case condition?.includes("rain"):
         return "rain1.png";
-      case condition.includes("cloudy"):
+      case condition?.includes("cloudy"):
         return "clouds1.png";
-      case condition.includes("wind"):
+      case condition?.includes("wind"):
         return "wind1.png";
-      case condition.includes("snow"):
+      case condition?.includes("snow"):
         return "snow1.png";
+      case condition?.includes("thunder"):
+        return "thunder1.png";
       case true:
-        return "Moon.png";
+        return "faceMoon.png";
     }
   }
   return (
     <div className="z-10  relative w-[414px] h-[828px] bg-[#1F2937]/80 rounded-[50px] m-auto my-[14vh]">
-      <div className="pl-10 pt-[56px]">
+      <div className="pl-10 pt-[56px] ">
         <p className="text-[18px] text-[#9CA3AF]">{setDate}</p>
+
         <div>
           <h1 className="text-[48px]  text-[#FFFFFF]">{city} </h1>
-          <img className="my-[-7vh] pl-[27vh]" src="./location.svg" alt="" />
+          <img
+            className="my-[-9vh] pl-[27vh] selection:"
+            src="./location.svg"
+            alt=""
+          />
         </div>
-        <img
-          className="mx-[3vh] pt-[17vh] "
-          src={changeWeatherIcon(nightCondition)}
-          alt=""
-        />
+        <div className="flex items-center">
+          <img
+            className=" pt-[17vh] w-[520px] h-[520px] "
+            src={changeWeatherIcon(nightCondition)}
+            alt=""
+          />
+        </div>
         <p className="text-[130px] bg-clip-text text-transparent bg-gradient-to-r from-[#F9FAFB] to-[#1e1f21]">
           {setNightTemp}°
         </p>

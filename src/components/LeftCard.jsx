@@ -7,19 +7,21 @@ export default function LeftCard({
 }) {
   function changeWeatherIcon(dayCondition) {
     console.log(dayCondition);
-    const condition = dayCondition.toLowerCase();
+    const condition = dayCondition?.toLowerCase();
 
     switch (true) {
-      case condition.includes("sun"):
-        return "facesun.png";
-      case condition.includes("rain"):
+      case condition?.includes("sun"):
+        return "faceSun.png";
+      case condition?.includes("rain"):
         return "rain.png";
-      case condition.includes("cloudy"):
+      case condition?.includes("cloudy"):
         return "clouds.png";
-      case condition.includes("wind"):
+      case condition?.includes("wind"):
         return "wind.png";
-      case condition.includes("snow"):
+      case condition?.includes("snow"):
         return "snow.png";
+      case condition?.includes("thunder"):
+        return "thunder.png";
       case true:
         return "faceSun.png";
     }
@@ -33,12 +35,13 @@ export default function LeftCard({
           <img className="my-[-70px] pl-[27vh]" src="./location.svg" alt="" />
         </div>
         <div className="my-[-11vh] "></div>
-        <img
-          clas
-          className=" mx-[3vh] pt-[20vh] "
-          src={changeWeatherIcon(dayCondition)}
-          alt=""
-        />
+        <div className="flex items-center">
+          <img
+            className="  pt-[20vh] w-[520px] h-[520px]  "
+            src={changeWeatherIcon(dayCondition)}
+            alt=""
+          />
+        </div>
         <p className="text-[130px] bg-clip-text text-transparent bg-gradient-to-r from-[#111827] to-[#7d8391]">
           {setTemp}°
         </p>
