@@ -13,7 +13,7 @@ export default function RightCard({
       case condition?.includes("clear"):
         return "faceMoon.png";
       case condition?.includes("rain"):
-        return "rain1.png";
+        return "Rain1.png";
       case condition?.includes("cloudy"):
         return "clouds1.png";
       case condition?.includes("wind"):
