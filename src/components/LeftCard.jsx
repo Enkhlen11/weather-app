@@ -13,13 +13,13 @@ export default function LeftCard({
       case condition?.includes("sun"):
         return "faceSun.png";
       case condition?.includes("rain"):
-        return "rain.png";
+        return "Rain.png";
       case condition?.includes("cloudy"):
-        return "clouds.png";
+        return "Clouds.png";
       case condition?.includes("wind"):
-        return "wind.png";
+        return "Wind.png";
       case condition?.includes("snow"):
-        return "snow.png";
+        return "Snow.png";
       case condition?.includes("thunder"):
         return "thunder.png";
       case true:
